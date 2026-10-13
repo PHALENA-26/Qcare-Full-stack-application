@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<section th:fragment="aiCollaboration" class="ai-collab-section" id="aiCollabSection">
+    <!-- Header Block -->
+    <div class="ai-collab-header">
+        <h2 class="ai-collab-title">
+            Bring AI where it helps and<br>
+            <span>humans where it matters</span>
+        </h2>
+        <p class="ai-collab-desc">
+            QCARE weaves AI into healthcare operations naturally. Autonomous AI agents handle
+            routine inquiries and appointments end-to-end, handing off seamlessly when clinical
+            judgment matters most. Even then, AI stays active in the background—surfacing insights
+            and drafting precise care responses.
+        </p>
+        <div class="ai-collab-cta-wrap">
+            <a href="#explore-ai" class="btn-explore-ai">EXPLORE QCARE AI</a>
+        </div>
+    </div>
+
+    <!-- Dual Cards Comparison Stage -->
+    <div class="ai-collab-stage">
+
+        <!-- ================= CARD 1: Resolved by AI Agent ================= -->
+        <div class="collab-card-column">
+            <!-- Badge Header -->
+            <div class="badge-label-wrap">
+                <span class="handwritten-label">Resolved by</span>
+                <span class="pill-badge badge-ai-agent">AI Agent</span>
+            </div>
+
+            <!-- Card Body -->
+            <div class="collab-glass-card card-ai-agent">
+                <!-- Top Mini Floating Badge -->
+                <div class="card-floating-header">
+                    <div class="ai-spark-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#4F7D32"/>
+                        </svg>
+                    </div>
+                    <div class="card-ticket-owner">
+                        <span class="owner-label">Ticket Owner</span>
+                        <div class="owner-dropdown">
+                            <strong>Care Specialist</strong>
+                            <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="#4F7D32" stroke-width="1.8" fill="none"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Dialog Area -->
+                <div class="dialog-body">
+                    <!-- User Message -->
+                    <div class="chat-row user-row">
+                        <div class="avatar-circle user-avatar">PT</div>
+                        <div class="chat-bubble-content">
+                            <div class="sender-info">
+                                <strong>Diane Greene</strong>
+                                <span class="time-meta">03:47 PM (just now)</span>
+                            </div>
+                            <p class="chat-text">What are the OPD consultation hours for Cardiology this Saturday?</p>
+                        </div>
+                    </div>
+
+                    <!-- AI Agent Reply -->
+                    <div class="chat-row agent-row">
+                        <div class="avatar-circle agent-avatar">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F7D32" stroke-width="2.2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                        </div>
+                        <div class="chat-bubble-content">
+                            <div class="sender-info">
+                                <strong>Care Specialist AI</strong>
+                                <span class="time-meta">03:48 PM</span>
+                            </div>
+                            <p class="chat-text">Cardiology OPD is open from 09:00 AM to 02:00 PM on Saturdays. Would you like me to book token #640 for Dr. Sarah Smith?</p>
+                        </div>
+                    </div>
+
+                    <!-- Skeleton bars for realistic preview -->
+                    <div class="skeleton-shimmer">
+                        <span class="bar bar-long"></span>
+                        <span class="bar bar-short"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= CARD 2: Resolved by AI + Human ================= -->
+        <div class="collab-card-column">
+            <!-- Badge Header -->
+            <div class="badge-label-wrap">
+                <span class="handwritten-label">Resolved by</span>
+                <span class="pill-badge badge-ai-human">AI + Human</span>
+            </div>
+
+            <!-- Card Body -->
+            <div class="collab-glass-card card-ai-human">
+                <!-- Ticket Top Bar -->
+                <div class="ticket-top-controls">
+                    <div class="ticket-header-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <h3>My appointment refund is pending!!</h3>
+                    </div>
+                    <div class="ticket-action-btns">
+                        <button type="button" class="btn-reply-all">
+                            <span>⮌ Reply all</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <button type="button" class="btn-icon-square" aria-label="Comment">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="ticket-nav-tabs">
+                    <span class="tab-item active">CONVERSATIONS</span>
+                    <span class="tab-item">RESOLUTION</span>
+                    <span class="tab-item">ATTACHMENT</span>
+                </div>
+
+                <!-- Reply Assistance Box -->
+                <div class="reply-assistance-box">
+                    <div class="assistance-header">
+                        <div class="assist-badge-label">
+                            <span class="sparkle-leaf">✦</span>
+                            <strong>Reply Assistance</strong>
+                        </div>
+                        <div class="assist-actions">
+                            <button type="button" class="btn-use-reply">
+                                <span>Use As Reply</span>
+                                <span class="pointer-cursor-hand">👆</span>
+                            </button>
+                            <button type="button" class="btn-regenerate" title="Regenerate">
+                                <span>↻ Regenerate</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="assisted-draft-text">
+                        "Hello Diane, could you please verify your Booking Reference ID? Our billing department will verify the cancellation status and expedite the refund within 24 hours."
+                    </p>
+                </div>
+
+                <!-- Zia / QCARE Floating Insights Pill -->
+                <div class="floating-insight-overlay">
+                    <div class="insight-pill-header">
+                        <span class="sparkle-mini">✦</span>
+                        <strong>QCARE Insights</strong>
+                    </div>
+                    <div class="insight-pills-row">
+                        <div class="insight-metric">
+                            <span class="metric-title">Patient Tone</span>
+                            <span class="tone-badge-urgent">😟 Frustrated</span>
+                        </div>
+                        <div class="insight-metric">
+                            <span class="metric-title">Key Topics</span>
+                            <div class="topic-group">
+                                <span class="topic-chip topic-alert">Refund Status</span>
+                                <span class="topic-chip topic-pending">Payment Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<section th:fragment="testimonialsSection" class="testimonials-suite-section" id="testimonialsSection">
+
+    <!-- Section Header -->
+    <div class="testi-header-container">
+        <h2 class="testi-headline">
+            A decade of serving<br>
+            <span>patient-first healthcare</span>
+        </h2>
+        <p class="testi-subheading">
+            Trusted by premier multi-speciality hospitals, healthcare networks, and medical teams across the country.
+        </p>
+    </div>
+
+    <!-- Edge Controls (Left & Right Carousel Arrows like the video) -->
+    <div class="testi-carousel-controls">
+        <button class="testi-arrow-btn prev-btn" id="testiPrevBtn" aria-label="Scroll left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="testi-arrow-btn next-btn" id="testiNextBtn" aria-label="Scroll right">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+    </div>
+
+    <!-- Marquee Track Wrapper -->
+    <div class="testi-marquee-viewport" id="testiViewport">
+
+        <!-- ================= ROW 1: Scrolls Left ================= -->
+        <div class="testi-track row-track-top" id="trackTop">
+
+            <!-- Card 1 (English - Apollo) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-en">
+                    Since adopting QCARE Suite, we've seen a 42% reduction in OPD wait times and a significant improvement in patient retention across our cardiology wings.
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Dr. Aris Thorne" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>Dr. Aris Thorne</strong>
+                            <span>Chief Medical Officer, Apollo</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-apollo">Apollo</span>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Card 2 (Hindi - AIIMS) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-hi">
+                    QCARE अपनाने के बाद से आपातकालीन समन्वय और स्मार्ट टोकन कतार प्रणाली में 50% से अधिक सुधार हुआ है। मरीज़ों की संतुष्टि दर अब 96% तक पहुंच गई है।
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="डॉ. राजेश शर्मा" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>डॉ. राजेश शर्मा</strong>
+                            <span>अधीक्षक, AIIMS नई दिल्ली</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-aiims">AIIMS</span>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Card 3 (Bengali - SSKM / IPGMER) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-bn">
+                    হাসপাতালের বহির্বিভাগ এবং জরুরি পরিষেবায় QCARE প্রয়োগের পর রোগীদের দীর্ঘ লাইনের ভোগান্তি প্রায় শূন্যে নেমে এসেছে। স্বাস্থ্যকর্মীদের কাজের গতিও দ্বিগুণ বেড়েছে।
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="ডাঃ অনিন্দিতা সেনগুপ্ত" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>ডাঃ অনিন্দিতা সেনগুপ্ত</strong>
+                            <span>সিনিয়র ডিরেক্টর, SSKM হাসপাতাল</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-sskm">SSKM</span>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Card 4 (English - Fortis) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-en">
+                    The ease of cloud configuration sold us on QCARE. The fact that clinical staff configured appointment triage themselves in under two weeks impressed our board.
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Marcus Sterling" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>Marcus Sterling</strong>
+                            <span>VP Patient Experience, Fortis</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-fortis">Fortis</span>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Clones for seamless infinite scroll (Generated by JS or duplicated here) -->
+        </div>
+
+        <!-- ================= ROW 2: Scrolls Right ================= -->
+        <div class="testi-track row-track-bottom" id="trackBottom">
+
+            <!-- Card 5 (Hindi - PGIMER) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-hi">
+                    मानव सेवा और त्वरित उपचार में डिजिटल सहायता का यह संतुलन अद्भुत है। हमारे डॉक्टर बिना किसी तकनीकी रुकावट के सिर्फ मरीज के उपचार पर ध्यान केंद्रित कर पाते हैं।
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80" alt="डॉ. विक्रम मल्होत्रा" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>डॉ. विक्रम मल्होत्रा</strong>
+                            <span>निदेशक, PGIMER</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-pgi">PGIMER</span>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Card 6 (English - Narayana Health) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-en">
+                    Over the last 6 months, after integrating MEDIQ token flows, we have maintained a patient CSAT score of 98.4%. It sets a new benchmark in clinical workflow.
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Siddharth Rao" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>Siddharth Rao</strong>
+                            <span>Head of IT & Systems, Narayana</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-narayana">Narayana</span>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Card 7 (Bengali - AMRI / Manipal) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-bn">
+                    ডিজিটাল প্রেসক্রিপশন ও অ্যাপয়েন্টমেন্ট অনুসরণের ক্ষেত্রে এটি এক যুগান্তকারী পরিবর্তন। রোগীরা সময়মতো তথ্য পেয়ে চিকিৎসকদের ওপর আস্থা বহুগুণ বাড়িয়েছেন।
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="প্রিয়াঙ্কা মুখোপাধ্যায়" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>প্রিয়াঙ্কা মুখোপাধ্যায়</strong>
+                            <span>কেয়ার কোঅর্ডিনেটর, Manipal</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-manipal">Manipal</span>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Card 8 (English - Max Healthcare) -->
+            <article class="testi-card">
+                <span class="quote-mark">“</span>
+                <p class="quote-content lang-en">
+                    Few healthcare suites offer this kind of seamless bridge between patient EHR, live token queues, and bedside triage. It is remarkably simple yet deeply powerful.
+                </p>
+                <footer class="card-footer">
+                    <div class="author-block">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova" class="author-avatar"/>
+                        <div class="author-info">
+                            <strong>Elena Rostova</strong>
+                            <span>Clinical Operations Director, Max</span>
+                        </div>
+                    </div>
+                    <div class="institution-logo">
+                        <span class="logo-badge badge-max">Max Health</span>
+                    </div>
+                </footer>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

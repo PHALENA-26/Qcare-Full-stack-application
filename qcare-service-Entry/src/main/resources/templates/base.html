@@ -14,6 +14,8 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
     <link rel="stylesheet" th:href="@{/css/hero.css}" href="../static/css/hero.css">
     <link rel="stylesheet" th:href="@{/css/healthcare-ecosystem.css}" href="../static/css/healthcare-ecosystem.css">
+    <link rel="stylesheet" th:href="@{/css/ai-collaboration.css}" href="../static/css/ai-collaboration.css">
+    <link rel="stylesheet" th:href="@{/css/testimonials.css}" href="../static/css/testimonials.css">
 
     <!-- GSAP & ScrollTrigger for Scroll Physics -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -28,6 +30,11 @@
 <main id="main-content">
     <div th:replace="~{fragments/hero :: heroSection}"></div>
     <div th:replace="~{fragments/healthcare-ecosystem :: healthcareEcosystem}"></div>
+
+    <div th:replace="~{fragments/ai-collaboration :: aiCollaboration}"></div>
+
+    <!-- Testimonials Ticker / Slider Fragment -->
+    <div th:replace="~{fragments/testimonials :: testimonialsSection}"></div>
 </main>
 
 <!-- Floating Live Chat Widget (Collapses on small screens) -->

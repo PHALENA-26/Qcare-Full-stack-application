@@ -1,0 +1,571 @@
+/* ==========================================================================
+   AI Collaboration Dual-Card Section
+   Colors: #4F7D32 (Green), #FFD16A (Light Yellow), #D9361E (Red), #F5B52E (Yellow)
+   ========================================================================== */
+:root {
+    --collab-green: #4F7D32;
+    --collab-green-hover: #3e6327;
+    --collab-yellow-light: #FFD16A;
+    --collab-red: #D9361E;
+    --collab-yellow-gold: #F5B52E;
+}
+
+.ai-collab-section {
+    position: relative;
+    width: 100%;
+    padding: 90px 24px 110px;
+    background:
+        radial-gradient(circle at 10% 25%, rgba(255, 209, 106, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 90% 75%, rgba(79, 125, 50, 0.16) 0%, transparent 50%),
+        linear-gradient(180deg, #ffffff 0%, #fbfdf9 50%, #f4f8f2 100%);
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+.ai-collab-header {
+    max-width: 860px;
+    margin: 0 auto 56px;
+    text-align: center;
+}
+
+.ai-collab-title {
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    font-size: clamp(2.1rem, 4vw, 3.4rem);
+    font-weight: 800;
+    color: var(--collab-green);
+    line-height: 1.18;
+    margin-bottom: 20px;
+    letter-spacing: -0.6px;
+}
+
+.ai-collab-title span {
+    color: #1a3311;
+}
+
+.ai-collab-desc {
+    font-size: clamp(0.98rem, 1.2vw, 1.15rem);
+    color: #4a5568;
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 0 auto 30px;
+}
+
+.ai-collab-cta-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-explore-ai {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--collab-green);
+    color: var(--collab-green);
+    font-weight: 700;
+    font-size: 13.5px;
+    letter-spacing: 0.8px;
+    padding: 12px 32px;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(79, 125, 50, 0.12);
+}
+
+.btn-explore-ai:hover {
+    background: var(--collab-green);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(79, 125, 50, 0.25);
+}
+
+/* ==========================================================================
+   Stage & Dual Comparison Cards
+   ========================================================================== */
+.ai-collab-stage {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+    align-items: start;
+}
+
+.collab-card-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Badge Headers */
+.badge-label-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-left: 6px;
+}
+
+.handwritten-label {
+    font-family: 'Comic Sans MS', 'Caveat', cursive, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #1a202c;
+}
+
+.pill-badge {
+    font-size: 12.5px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    letter-spacing: 0.3px;
+}
+
+.badge-ai-agent {
+    background: #fffdf5;
+    color: #925c04;
+    border-color: var(--collab-yellow-gold);
+}
+
+.badge-ai-human {
+    background: #fbfdff;
+    color: #1e3a8a;
+    border-color: #3b82f6;
+}
+
+/* Base Card Style */
+.collab-glass-card {
+    background: #ffffff;
+    border: 1px solid rgba(79, 125, 50, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.1), 0 2px 10px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 440px;
+}
+
+.collab-glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 55px -14px rgba(79, 125, 50, 0.18);
+}
+
+/* ==========================================================================
+   Card 1: AI Agent
+   ========================================================================== */
+.card-ai-agent {
+    padding: 24px;
+}
+
+.card-floating-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 12px;
+    padding: 8px 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.ai-spark-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #f0f7ec;
+    border: 1px solid rgba(79, 125, 50, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-ticket-owner {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.owner-label {
+    font-size: 10.5px;
+    color: #718096;
+    font-weight: 600;
+}
+
+.owner-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a202c;
+    cursor: pointer;
+}
+
+/* Chat Dialog */
+.dialog-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.chat-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.avatar-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 11.5px;
+    flex-shrink: 0;
+}
+
+.user-avatar {
+    background: #edf2f7;
+    color: #2d3748;
+}
+
+.agent-avatar {
+    background: #eef7eb;
+    border: 1px solid rgba(79, 125, 50, 0.25);
+}
+
+.chat-bubble-content {
+    background: #fafbfc;
+    border: 1px solid #eef2f6;
+    border-radius: 12px;
+    padding: 12px 16px;
+    flex: 1;
+}
+
+.sender-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.time-meta {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.chat-text {
+    font-size: 13.5px;
+    color: #1e293b;
+    line-height: 1.45;
+}
+
+.skeleton-shimmer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    padding-left: 46px;
+}
+
+.skeleton-shimmer .bar {
+    height: 10px;
+    background: #edf2f7;
+    border-radius: 6px;
+}
+.skeleton-shimmer .bar-long { width: 85%; }
+.skeleton-shimmer .bar-short { width: 55%; }
+
+/* ==========================================================================
+   Card 2: AI + Human
+   ========================================================================== */
+.card-ai-human {
+    padding: 24px;
+    position: relative;
+}
+
+.ticket-top-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 14px;
+    margin-bottom: 12px;
+}
+
+.ticket-header-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.ticket-header-title h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a202c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ticket-action-btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.btn-reply-all {
+    background: #1d4ed8;
+    color: #ffffff;
+    border: none;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.btn-icon-square {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ticket-nav-tabs {
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+}
+
+.tab-item {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.tab-item.active {
+    color: var(--collab-green);
+    border-bottom: 2px solid var(--collab-green);
+    padding-bottom: 8px;
+}
+
+/* Reply Assistance Box */
+.reply-assistance-box {
+    border: 1.5px solid var(--collab-yellow-gold);
+    background: #fffdfa;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(245, 181, 46, 0.08);
+}
+
+.assistance-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.assist-badge-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    color: #1a202c;
+}
+
+.sparkle-leaf {
+    color: var(--collab-green);
+    font-size: 15px;
+}
+
+.assist-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-use-reply {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.btn-regenerate {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 8px;
+    color: #475569;
+    cursor: pointer;
+}
+
+.assisted-draft-text {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Floating Insights Mini Pill Card */
+.floating-insight-overlay {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08);
+}
+
+.insight-pill-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.sparkle-mini {
+    color: var(--collab-green);
+}
+
+.insight-pills-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.insight-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metric-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.tone-badge-urgent {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #fff1f0;
+    color: var(--collab-red);
+    font-weight: 700;
+    font-size: 11.5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.topic-group {
+    display: flex;
+    gap: 6px;
+}
+
+.topic-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.topic-alert {
+    background: #fef2f2;
+    color: var(--collab-red);
+    border: 1px solid #fee2e2;
+}
+
+.topic-pending {
+    background: #fff8e6;
+    color: #925c04;
+    border: 1px solid var(--collab-yellow-light);
+}
+
+/* ==========================================================================
+   Full Responsive Layouts (Phones & Tablets)
+   ========================================================================== */
+@media (max-width: 960px) {
+    .ai-collab-stage {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        gap: 32px;
+    }
+
+    .collab-glass-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .ai-collab-section {
+        padding: 60px 16px 80px;
+    }
+
+    .ai-collab-title {
+        font-size: 1.85rem;
+    }
+
+    .ai-collab-desc {
+        font-size: 0.95rem;
+    }
+
+    .card-ai-agent,
+    .card-ai-human {
+        padding: 16px;
+    }
+
+    .ticket-top-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ticket-action-btns {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .insight-pills-row {
+        gap: 12px;
+    }
+
+    .btn-explore-ai {
+        width: 100%;
+        justify-content: center;
+    }
+}
