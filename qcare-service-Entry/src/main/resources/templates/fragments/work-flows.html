@@ -1,0 +1,304 @@
+```html<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<section th:fragment="workFlowsSection"
+         class="work-flows-section"
+         id="workFlowsSection"
+         aria-labelledby="workFlowsHeading">
+
+    <!-- Curved Top Mask -->
+    <div class="flows-top-curve" aria-hidden="true"></div>
+
+    <div class="flows-container">
+
+        <!-- Section Header -->
+        <header class="flows-header">
+            <h2 id="workFlowsHeading" class="flows-title">
+                Where healthcare simply flows
+            </h2>
+
+            <p class="flows-subtitle">
+                QCARE connects consultations, emergency coordination, and patient
+                queues in one healthcare ecosystem — helping patients get the
+                right care while healthcare teams work together seamlessly.
+            </p>
+        </header>
+
+        <!-- Slider Controls -->
+        <button type="button"
+                class="flows-nav-btn next"
+                id="flowsNextBtn"
+                aria-label="Next healthcare workflow slide">
+            <svg width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <button type="button"
+                class="flows-nav-btn prev"
+                id="flowsPrevBtn"
+                aria-label="Previous healthcare workflow slide">
+            <svg width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Healthcare Workflow Cards Carousel -->
+        <div class="flows-carousel-wrapper" id="flowsWrapper">
+            <div class="flows-track" id="flowsTrack">
+
+                <!-- CARD 1: MEDIMATE -->
+                <article class="flow-card medimate-card">
+
+                    <div class="flow-card-header">
+                        <h3 class="card-title">Coordinate Care</h3>
+                        <p class="card-desc">
+                            MEDIMATE brings doctor consultations, appointment
+                            scheduling, and medicine management together to
+                            make everyday healthcare simpler.
+                        </p>
+                    </div>
+
+                    <div class="flow-ui-window">
+                        <div class="flow-ui-box">
+
+                            <span class="box-label">Consultation Overview</span>
+
+                            <div class="pill-badge">
+                                <span class="bullet"></span>
+                                Appointment Confirmed
+                            </div>
+
+                            <div class="ui-divider"></div>
+
+                            <div class="split-row">
+                                <div class="col">
+                                    <span class="box-label">Speciality</span>
+                                    <strong class="highlight-text">
+                                        General Medicine
+                                    </strong>
+                                </div>
+
+                                <div class="col">
+                                    <span class="box-label">Appointment</span>
+                                    <strong class="highlight-text">
+                                        10:30 AM
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="sub-item-card">
+                                <span class="tag-icon">MD</span>
+                                <div>
+                                    <small>Consultation Status</small>
+                                    <p>Ready for consultation</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- CARD 2: MEDIPLUS -->
+                <article class="flow-card mediplus-card">
+
+                    <div class="flow-card-header">
+                        <h3 class="card-title">Coordinate Emergencies</h3>
+                        <p class="card-desc">
+                            MEDIPLUS supports SOS alerts, emergency coordination,
+                            risk awareness, and live tracking to help responders
+                            stay informed when every moment matters.
+                        </p>
+                    </div>
+
+                    <div class="flow-ui-window">
+                        <div class="flow-ui-box">
+
+                            <div class="feed-header">
+                                <span class="feed-title">
+                                    EMERGENCY RESPONSE
+                                </span>
+                                <span class="feed-dots">•••</span>
+                            </div>
+
+                            <div class="feed-comment">
+
+                                <div class="comment-author">
+                                    <div class="mini-avatar">SOS</div>
+
+                                    <div>
+                                        <strong>Emergency Alert</strong>
+                                        <span class="comment-action">
+                                            requires coordination
+                                        </span>
+                                        <small class="time-ago">
+                                            Priority response
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <div class="comment-bubble">
+                                    <span class="ticket-link">
+                                        SOS ALERT
+                                    </span>
+                                    <p class="comment-note">
+                                        Emergency details shared with the
+                                        appropriate response team.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="reply-input-box">
+                                <div class="mini-avatar">+</div>
+                                <span class="placeholder-text">
+                                    Response coordination status
+                                </span>
+                                <button type="button" class="btn-public">
+                                    Track
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- CARD 3: MEDIQ / CAREQ -->
+                <article class="flow-card mediq-card">
+
+                    <div class="flow-card-header">
+                        <h3 class="card-title">Streamline Patient Queues</h3>
+                        <p class="card-desc">
+                            MEDIQ helps patients apply for hospital tokens
+                            online, check live queue progress, and receive
+                            timely updates before their turn.
+                        </p>
+                    </div>
+
+                    <div class="flow-ui-window">
+                        <div class="flowchart-container">
+
+                            <!-- Queue Created -->
+                            <div class="flow-node state-open">
+                                <span class="node-pill">
+                                    Token Generated
+                                </span>
+                            </div>
+
+                            <div class="flow-line vertical"></div>
+
+                            <!-- Queue Progress -->
+                            <div class="flow-node action-node">
+                                <span>Your Token: #650</span>
+                                <span class="node-arrow">⟶</span>
+                                <span class="sub-node">
+                                    Current Token: #600
+                                </span>
+                            </div>
+
+                            <div class="flow-line vertical"></div>
+
+                            <!-- Notification -->
+                            <div class="flow-node success-node">
+                                <span class="check-icon">✓</span>
+                                Queue Update Received
+                            </div>
+
+                            <div class="flow-line vertical"></div>
+
+                            <!-- Patient Preparation -->
+                            <div class="flow-node process-node">
+                                Get Ready for Your Turn
+                            </div>
+
+                            <div class="flow-line vertical"></div>
+
+                            <!-- Completed -->
+                            <div class="flow-node state-close">
+                                <span class="close-pill">
+                                    Consultation Turn
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- CARD 4: CONNECTED CARE -->
+                <article class="flow-card connected-care-card">
+
+                    <div class="flow-card-header">
+                        <h3 class="card-title">Keep Care on Track</h3>
+                        <p class="card-desc">
+                            Connect appointment updates, emergency coordination,
+                            and queue progress so patients and care teams can
+                            stay informed throughout the care journey.
+                        </p>
+                    </div>
+
+                    <div class="flow-ui-window">
+                        <div class="flow-ui-box">
+
+                            <span class="box-label">
+                                Patient Care Journey
+                            </span>
+
+                            <div class="pill-badge dark">
+                                <span class="bullet green"></span>
+                                Care Journey Active
+                            </div>
+
+                            <div class="ui-divider"></div>
+
+                            <div class="sla-target-group">
+                                <span class="box-label">
+                                    Care Coordination
+                                </span>
+
+                                <div class="sla-metric-grid">
+
+                                    <div class="sla-metric">
+                                        <small>MEDIMATE</small>
+                                        <strong>Consult</strong>
+                                        <span>Appointments and care</span>
+                                    </div>
+
+                                    <div class="sla-metric">
+                                        <small>MEDIPLUS</small>
+                                        <strong>Respond</strong>
+                                        <span>Emergency coordination</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="sub-item-card">
+                                    <span class="tag-icon">Q</span>
+                                    <div>
+                                        <small>MEDIQ</small>
+                                        <p>Tokens and queue updates</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

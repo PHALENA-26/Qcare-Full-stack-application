@@ -1,0 +1,701 @@
+
+/* ==========================================================================
+   QCARE | PHALENA HEALTHCARE ECOSYSTEM
+   WHERE HEALTHCARE WORK SIMPLY FLOWS
+   Original design preserved + mobile responsive improvements
+   ========================================================================== */
+
+:root {
+  --flows-bg: #073827;
+  --flows-card-bg: #FFFFFF;
+  --flows-card-inner: #F8FAF9;
+  --flows-text-muted: #4B5563;
+  --flows-accent-green: #008744;
+  --flows-border: #E5E7EB;
+
+  /* QCARE ecosystem accents */
+  --medimate-accent: #0D9488;
+  --mediplus-accent: #DC2626;
+  --mediq-accent: #D4A017;
+}
+
+/* ==========================================================================
+   Main Section
+   ========================================================================== */
+
+.work-flows-section {
+  position: relative;
+  background-color: var(--flows-bg);
+  padding: 80px 0 110px;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+/* Curved seamless entrance transition */
+
+.flows-top-curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: transparent;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.flows-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+
+.flows-header {
+  max-width: 680px;
+  margin-bottom: 50px;
+}
+
+.flows-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  color: #FFFFFF;
+}
+
+.flows-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  max-width: 660px;
+}
+
+/* ==========================================================================
+   Navigation Arrows
+   ========================================================================== */
+
+.flows-nav-btn {
+  position: absolute;
+  right: 25px;
+  top: 60px;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: var(--flows-accent-green);
+  border: none;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.flows-nav-btn.prev {
+  right: 76px;
+  display: none;
+}
+
+.flows-nav-btn:hover {
+  background-color: #00A854;
+  transform: scale(1.05);
+}
+
+.flows-nav-btn:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   Horizontal Carousel
+   ========================================================================== */
+
+.flows-carousel-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 10px 0 25px;
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  touch-action: pan-x pan-y;
+}
+
+.flows-carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.flows-carousel-wrapper:active {
+  cursor: grabbing;
+}
+
+.flows-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  min-width: 100%;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   Healthcare Workflow Cards
+   ========================================================================== */
+
+.flow-card {
+  width: 330px;
+  min-width: 330px;
+  max-width: 330px;
+  background: var(--flows-card-bg);
+  border-radius: 20px;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #111827;
+  flex-shrink: 0;
+  overflow-wrap: anywhere;
+}
+
+.flow-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+.card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: #0F172A;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--flows-text-muted);
+  margin: 0 0 22px;
+  min-height: 66px;
+}
+
+/* Optional product identity accents.
+   Add these classes to the corresponding existing cards if desired. */
+
+.flow-card.medimate-card {
+  border-top: 4px solid var(--medimate-accent);
+}
+
+.flow-card.mediplus-card {
+  border-top: 4px solid var(--mediplus-accent);
+}
+
+.flow-card.mediq-card {
+  border-top: 4px solid var(--mediq-accent);
+}
+
+/* ==========================================================================
+   Embedded Product Interface Preview
+   ========================================================================== */
+
+.flow-ui-window {
+  background: #F4F9F6;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  height: 290px;
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.flow-ui-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.box-label {
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.05em;
+}
+
+.pill-badge {
+  background: #FFFFFF;
+  border: 1px solid var(--flows-border);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1E293B;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.pill-badge .bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #22C55E;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ui-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.split-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.highlight-text {
+  font-size: 0.82rem;
+  color: #0F172A;
+  display: block;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================================================
+   Patient and Healthcare Team Avatars
+   ========================================================================== */
+
+.avatar-stack {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.avatar-tag {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  background: #E2E8F0;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-avatar {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-left: -6px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Appointment, Emergency and Queue Sub-Cards
+   ========================================================================== */
+
+.sub-item-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--flows-border);
+  min-width: 0;
+}
+
+.sub-item-card small {
+  font-size: 0.72rem;
+  color: #64748B;
+}
+
+.sub-item-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================================================
+   Collaboration Feed
+   ========================================================================== */
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.feed-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #475569;
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  min-width: 0;
+}
+
+.comment-bubble {
+  background: #FFFFFF;
+  border: 1px solid var(--flows-border);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  margin-top: 6px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.ticket-link {
+  color: #0284C7;
+  font-weight: 700;
+}
+
+.reply-input-box {
+  background: #FFFFFF;
+  border: 1px solid var(--flows-border);
+  border-radius: 8px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  min-width: 0;
+}
+
+.reply-input-box .placeholder-text {
+  color: #94A3B8;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.btn-public {
+  background: #0284C7;
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.65rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Workflow and Automation Diagram
+   ========================================================================== */
+
+.flowchart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.flow-node {
+  font-size: 0.75rem;
+  background: #FFFFFF;
+  border: 1px solid var(--flows-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.flow-node.success-node {
+  background: #ECFDF5;
+  color: #065F46;
+  border-color: #A7F3D0;
+}
+
+.flow-node.state-close .close-pill {
+  background: #FEF3C7;
+  color: #92400E;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.flow-line.vertical {
+  width: 2px;
+  height: 12px;
+  background: #CBD5E1;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Healthcare Metrics
+   ========================================================================== */
+
+.sla-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.sla-metric {
+  background: #FFFFFF;
+  border: 1px solid var(--flows-border);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  min-width: 0;
+}
+
+.sla-metric small {
+  display: block;
+  font-size: 0.65rem;
+  color: #64748B;
+}
+
+.sla-metric strong {
+  font-size: 0.9rem;
+  color: #0F172A;
+  overflow-wrap: anywhere;
+}
+
+.sla-metric span {
+  display: block;
+  font-size: 0.65rem;
+  color: #94A3B8;
+}
+
+/* ==========================================================================
+   Tablet Responsiveness
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .work-flows-section {
+    padding: 70px 0 90px;
+  }
+
+  .flows-container {
+    padding: 0 28px;
+  }
+
+  .flows-header {
+    max-width: 620px;
+    margin-bottom: 38px;
+  }
+
+  .flows-nav-btn {
+    right: 28px;
+  }
+
+  .flows-nav-btn.prev {
+    right: 80px;
+  }
+
+  .flows-track {
+    gap: 20px;
+  }
+
+  .flow-card {
+    width: 310px;
+    min-width: 310px;
+    max-width: 310px;
+  }
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .work-flows-section {
+    padding: 60px 0 70px;
+  }
+
+  .flows-container {
+    padding: 0 20px;
+  }
+
+  .flows-header {
+    max-width: 100%;
+    margin-bottom: 26px;
+  }
+
+  .flows-title {
+    font-size: clamp(1.85rem, 7vw, 2.5rem);
+    line-height: 1.17;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+  }
+
+  .flows-subtitle {
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .flows-nav-btn {
+    display: none;
+  }
+
+  .flows-track {
+    gap: 16px;
+  }
+
+  .flows-carousel-wrapper {
+    margin-right: -20px;
+    width: calc(100% + 20px);
+    padding: 8px 20px 22px 0;
+    scroll-snap-type: x proximity;
+  }
+
+  .flow-card {
+    width: min(290px, calc(100vw - 48px));
+    min-width: min(290px, calc(100vw - 48px));
+    max-width: min(290px, calc(100vw - 48px));
+    padding: 24px 20px 20px;
+    border-radius: 17px;
+    scroll-snap-align: start;
+  }
+
+  .card-title {
+    font-size: 1.45rem;
+  }
+
+  .card-desc {
+    font-size: 0.88rem;
+    min-height: 0;
+    margin-bottom: 18px;
+  }
+
+  .flow-ui-window {
+    height: 270px;
+    min-height: 270px;
+    padding: 13px;
+  }
+
+  .pill-badge {
+    padding: 7px 9px;
+    font-size: 0.76rem;
+  }
+
+  .sub-item-card {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+}
+
+/* ==========================================================================
+   Small Phones
+   ========================================================================== */
+
+@media (max-width: 380px) {
+  .work-flows-section {
+    padding: 48px 0 56px;
+  }
+
+  .flows-container {
+    padding: 0 15px;
+  }
+
+  .flows-title {
+    font-size: 1.8rem;
+  }
+
+  .flows-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .flows-carousel-wrapper {
+    margin-right: -15px;
+    width: calc(100% + 15px);
+    padding-right: 15px;
+  }
+
+  .flows-track {
+    gap: 13px;
+  }
+
+  .flow-card {
+    width: calc(100vw - 42px);
+    min-width: calc(100vw - 42px);
+    max-width: calc(100vw - 42px);
+    padding: 21px 17px 18px;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+  }
+
+  .flow-ui-window {
+    height: 255px;
+    min-height: 255px;
+    padding: 11px;
+  }
+
+  .sla-metric-grid {
+    gap: 6px;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-card,
+  .flows-nav-btn {
+    transition: none;
+  }
+
+  .flows-carousel-wrapper {
+    scroll-behavior: auto;
+  }
+
+  .flow-card:hover,
+  .flows-nav-btn:hover {
+    transform: none;
+  }
+}
