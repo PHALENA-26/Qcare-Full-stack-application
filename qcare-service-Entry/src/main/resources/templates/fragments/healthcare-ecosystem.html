@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<section th:fragment="healthcareEcosystem"
+         class="healthcare-ecosystem"
+         id="healthcare-ecosystem"
+         aria-labelledby="ecosystem-title">
+
+    <div class="ecosystem-content">
+
+        <div class="ecosystem-heading">
+            <span class="ecosystem-eyebrow">THE PHALENA ECOSYSTEM</span>
+
+            <h2 id="ecosystem-title">
+                One Ecosystem. <span>Three Specialties.</span>
+            </h2>
+
+            <p>
+                Purpose-built healthcare solutions working together
+                to simplify care, coordination, and hospital operations.
+            </p>
+        </div>
+
+        <div class="ecosystem-products">
+
+            <!-- MEDIMATE -->
+            <button type="button"
+                    class="ecosystem-product"
+                    data-product="medimate"
+                    aria-label="Learn about MEDIMATE"
+                    aria-expanded="false">
+
+                <span class="product-logo-wrap">
+                    <img th:src="@{/images/medimate.png}"
+                         src="../static/images/medimate.png"
+                         alt="MEDIMATE logo"
+                         class="product-logo">
+                </span>
+
+                <span class="product-name">MEDIMATE</span>
+                <span class="product-description">
+                    Hospital Management
+                </span>
+                <span class="product-explore">
+                    Explore specialty <span aria-hidden="true">↗</span>
+                </span>
+            </button>
+
+
+
+            <!-- MEDIQ -->
+            <button type="button"
+                    class="ecosystem-product"
+                    data-product="mediq"
+                    aria-label="Learn about MEDIQ"
+                    aria-expanded="false">
+
+                <span class="product-logo-wrap">
+                    <img th:src="@{/images/careq.png}"
+                         src="../static/images/careq.png"
+                         alt="MEDIQ logo"
+                         class="product-logo">
+                </span>
+
+                <span class="product-name">CAREQ</span>
+                <span class="product-description">
+                    Smart Queues & Tokens
+                </span>
+                <span class="product-explore">
+                    Explore specialty <span aria-hidden="true">↗</span>
+                </span>
+            </button>
+
+            <!-- MEDIPLUS -->
+            <button type="button"
+                    class="ecosystem-product"
+                    data-product="mediplus"
+                    aria-label="Learn about MEDIPLUS"
+                    aria-expanded="false">
+
+                <span class="product-logo-wrap">
+                    <img th:src="@{/images/madiplus.png}"
+                         src="../static/images/madiplus.png"
+                         alt="MEDIPLUS logo"
+                         class="product-logo">
+                </span>
+
+                <span class="product-name">MEDIPLUS</span>
+                <span class="product-description">
+                    Emergency & Patient Safety
+                </span>
+                <span class="product-explore">
+                    Explore specialty <span aria-hidden="true">↗</span>
+                </span>
+            </button>
+
+        </div>
+
+        <!-- Small message popup -->
+        <div class="product-message"
+             id="productMessage"
+             role="status"
+             aria-live="polite"
+             hidden>
+
+            <button type="button"
+                    class="product-message-close"
+                    id="closeProductMessage"
+                    aria-label="Close message">×</button>
+
+            <span class="message-label">MEET THE SPECIALIST</span>
+            <h3 id="productMessageTitle">MEDIMATE</h3>
+            <p id="productMessageText"></p>
+        </div>
+
+        <div class="ecosystem-footer">
+            <span class="ecosystem-status-dot"></span>
+            <span>Three focused solutions. One connected vision for healthcare.</span>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

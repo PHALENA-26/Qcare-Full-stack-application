@@ -1,0 +1,667 @@
+/* ==========================================================================
+   Design System & Theme Tokens (PHALENA | QCARE Brand)
+   ========================================================================== */
+:root {
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --color-primary-red: #e42525;
+    --color-primary-red-hover: #c81e1e;
+    --color-desk-green: #16803c;
+    --color-desk-green-hover: #116830;
+    --color-text-main: #0d1b2a;
+    --color-text-muted: #4a5568;
+
+    --bg-page: #ffffff;
+    --border-light: #eef2f6;
+
+    --header-height-top: 40px;
+    --header-height-main: 70px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    background-color: var(--bg-page);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Header & Multi-Product Bar
+   ========================================================================== */
+.header-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.utility-bar {
+    background-color: #fafbfc;
+    border-bottom: 1px solid var(--border-light);
+    height: var(--header-height-top);
+    font-size: 12px;
+}
+
+.utility-inner,
+.main-nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.utility-inner {
+    height: 100%;
+}
+
+.main-nav-inner {
+    height: var(--header-height-main);
+    position: relative;
+}
+
+.ecosystem-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.ecosystem-links::-webkit-scrollbar {
+    display: none;
+}
+
+.brand-blocks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.phalena-mini-logo {
+    display: block;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.eco-link {
+    color: #556270;
+    transition: color 0.2s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+.eco-link:hover { color: #000; }
+
+.utility-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+}
+
+/* Language Dropdown */
+.language-selector {
+    position: relative;
+}
+.lang-trigger {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #475569;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.lang-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 130%;
+    right: 0;
+    width: 170px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 8px 0;
+    list-style: none;
+    z-index: 100;
+}
+.lang-dropdown-menu li a {
+    display: block;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    color: #334155;
+}
+.lang-dropdown-menu li a:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+.language-selector.active .lang-dropdown-menu {
+    display: block;
+}
+
+.signin-link {
+    color: #334155;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.btn-primary-red {
+    background-color: var(--color-primary-red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+.btn-primary-red:hover {
+    background-color: var(--color-primary-red-hover);
+}
+
+/* Main Navigation */
+.brand-desk-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.brand-desk-logo .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+.brand-sup {
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: var(--color-desk-green);
+}
+.brand-sub {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.desk-menu-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+.nav-item {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.nav-item:hover { color: #000; }
+
+.header-action-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-ask-zia {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1.5px solid var(--color-desk-green);
+    color: var(--color-desk-green);
+    font-weight: 600;
+    font-size: 13.5px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+.btn-ask-zia:hover {
+    background: var(--color-desk-green);
+    color: #fff;
+}
+.btn-ask-zia .sparkle {
+    font-size: 15px;
+}
+
+/* Hamburger Toggle Button (Hidden on Desktop) */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 3px 0;
+    z-index: 1001;
+}
+.mobile-menu-toggle .hamburger-bar {
+    width: 24px;
+    height: 2px;
+    background-color: #1e293b;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: 1px center;
+}
+
+/* Hamburger Animated 'X' when Open */
+.mobile-menu-toggle.is-active .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(2px, -1px);
+}
+.mobile-menu-toggle.is-active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(8px);
+}
+.mobile-menu-toggle.is-active .hamburger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, 1px);
+}
+
+/* Mobile Slide-Out Drawer Menu */
+.mobile-drawer {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid var(--border-light);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-drawer.is-open {
+    max-height: 480px;
+}
+.mobile-drawer-inner {
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.mob-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    padding: 4px 0;
+}
+.mob-link:hover {
+    color: var(--color-desk-green);
+}
+.mobile-ecosystem-section {
+    border-top: 1px solid var(--border-light);
+    padding-top: 14px;
+}
+.mob-section-label {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 10px;
+}
+.mob-eco-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.mob-eco-pill {
+    font-size: 11px;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+.mobile-drawer-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+}
+.btn-mob-signin {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    padding: 8px 12px;
+}
+.mob-btn-cta {
+    flex: 1;
+    text-align: center;
+    padding: 9px 16px;
+}
+
+/* ==========================================================================
+   Social Proof Strip (Individual Signature Brand Colors)
+   ========================================================================== */
+.trusted-brands-strip {
+    position: relative;
+    z-index: 20;
+    background: #ffffff;
+    padding: 44px 20px 56px;
+    text-align: center;
+    border-top: 1px solid #f1f5f9;
+}
+
+.trusted-headline {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 26px;
+}
+
+.brand-logos-row {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 28px 40px;
+}
+
+.logo-item {
+    display: inline-flex;
+    align-items: center;
+}
+.logo-item .brand-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    transition: transform 0.2s ease;
+    cursor: default;
+}
+.logo-item .brand-text:hover {
+    transform: translateY(-2px);
+}
+
+/* Individual Signature Brand Colors */
+.brand-logos-row .logo-item:nth-child(1) .brand-text {
+    color: #ff5722;
+}
+.brand-logos-row .logo-item:nth-child(2) .brand-text {
+    color: #1f2937;
+    font-weight: 700;
+}
+.brand-logos-row .logo-item:nth-child(3) .brand-text {
+    color: #9c27b0;
+}
+.brand-logos-row .logo-item:nth-child(4) .brand-text {
+    color: #0b3954;
+}
+.brand-logos-row .logo-item:nth-child(5) .brand-text {
+    color: #00897b;
+}
+
+/* ==========================================================================
+   Floating Live Chat Widget (Base Styles - Desktop)
+   ========================================================================== */
+.floating-chat-bubble {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    pointer-events: auto;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.chat-status-pill {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.16), 0 4px 10px rgba(0, 0, 0, 0.04);
+    border-radius: 40px;
+    padding: 9px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.chat-status-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px -4px rgba(15, 23, 42, 0.22);
+    border-color: rgba(22, 128, 60, 0.3);
+}
+
+.chat-status-pill:active {
+    transform: scale(0.96);
+}
+
+/* Green online status pulse dot */
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: #16803c;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(22, 128, 60, 0.5);
+    animation: statusPulse 2.2s infinite;
+}
+
+@keyframes statusPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(22, 128, 60, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(22, 128, 60, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(22, 128, 60, 0);
+    }
+}
+
+.chat-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.chat-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+}
+
+.chat-subtitle {
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.chat-avatar {
+    color: #0077cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints & Collapsible Chat Widget
+   ========================================================================== */
+
+/* 1. Medium Tablets (<= 900px) */
+@media (max-width: 900px) {
+    .desk-menu-links {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    .mobile-drawer {
+        display: block;
+    }
+    .btn-ask-zia {
+        font-size: 12.5px;
+        padding: 5px 12px;
+    }
+}
+
+/* 2. Small Tablets (<= 768px): Hide subtitle, keep compact badge */
+@media (max-width: 768px) {
+    .floating-chat-bubble {
+        bottom: 20px;
+        right: 16px;
+    }
+
+    .chat-status-pill {
+        padding: 8px 14px;
+        gap: 10px;
+    }
+
+    .chat-subtitle {
+        display: none;
+    }
+
+    .chat-title {
+        font-size: 12px;
+    }
+}
+
+/* 3. Small Screens (<= 600px): Fully Collapsed Floating Action Button */
+@media (max-width: 600px) {
+    .utility-bar {
+        display: none;
+    }
+    .main-nav-inner {
+        padding: 0 16px;
+        height: 60px;
+    }
+    .brand-sub {
+        font-size: 18px;
+    }
+    .brand-sup {
+        font-size: 8.5px;
+    }
+    .btn-ask-zia .btn-text {
+        display: none;
+    }
+    .btn-ask-zia {
+        padding: 6px 10px;
+        border-radius: 50%;
+    }
+    .brand-logos-row {
+        gap: 16px 24px;
+    }
+    .logo-item .brand-text {
+        font-size: 1.05rem;
+    }
+
+    /* COLLAPSE CHAT: Transforms pill into a sleek circular floating button */
+    .floating-chat-bubble {
+        bottom: max(16px, env(safe-area-inset-bottom, 16px));
+        right: 14px;
+    }
+
+    .chat-status-pill {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
+    }
+
+    /* Hide the text completely when collapsed */
+    .chat-text {
+        display: none !important;
+    }
+
+    /* Badge the status dot neatly onto the top-right corner of the button */
+    .status-dot {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid #ffffff;
+        z-index: 2;
+    }
+
+    .chat-avatar svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Optional expansion when tapped on mobile */
+    .chat-status-pill.is-mobile-expanded {
+        width: auto;
+        height: auto;
+        padding: 8px 14px;
+        border-radius: 30px;
+    }
+
+    .chat-status-pill.is-mobile-expanded .chat-text {
+        display: flex !important;
+        margin-left: 8px;
+        margin-right: 6px;
+    }
+
+    .chat-status-pill.is-mobile-expanded .status-dot {
+        position: static;
+        border: none;
+    }
+}

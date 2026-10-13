@@ -1,0 +1,259 @@
+
+/* ==========================================================
+   PHALENA | Healthcare Ecosystem Trust Strip
+   ========================================================== */
+
+.healthcare-ecosystem {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 64px 24px 42px;
+    background-color: #fff;
+    background-image:
+        url("/images/qcare-trust-ribbon.png"),
+        radial-gradient(ellipse at 50% 40%, #fffdf1 0%, #ffffff 72%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 100% 100%, cover;
+}
+
+.ecosystem-content {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ecosystem-heading {
+    margin-bottom: 34px;
+}
+
+.ecosystem-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #9a6700;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.ecosystem-heading h2 {
+    margin: 0 0 12px;
+    color: #172033;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(27px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+.ecosystem-heading h2 span {
+    color: #d69b00;
+}
+
+.ecosystem-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Three product cards */
+.ecosystem-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.ecosystem-product {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 27px 18px 24px;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.055);
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.ecosystem-product:hover,
+.ecosystem-product:focus-visible,
+.ecosystem-product.is-active {
+    transform: translateY(-5px);
+    border-color: #e8bd36;
+    box-shadow: 0 14px 34px rgba(180, 130, 0, 0.13);
+    outline: none;
+}
+
+.product-logo-wrap {
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    padding: 8px;
+    border-radius: 17px;
+    background: #fff9df;
+}
+
+.product-logo {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-name {
+    color: #172033;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.product-description {
+    margin-top: 7px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.product-explore {
+    margin-top: 17px;
+    color: #986b00;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.product-explore span {
+    margin-left: 4px;
+}
+
+/* Product message popup */
+.product-message {
+    position: relative;
+    max-width: 560px;
+    margin: 25px auto 0;
+    padding: 22px 48px 22px 24px;
+    border: 1px solid #f0d77c;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.10);
+    text-align: left;
+    animation: ecosystem-message-in 0.22s ease-out;
+}
+
+.product-message[hidden] {
+    display: none;
+}
+
+.message-label {
+    color: #a16d00;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.product-message h3 {
+    margin: 7px 0;
+    color: #172033;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.product-message p {
+    margin: 0;
+    color: #526075;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.product-message-close {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff6d6;
+    color: #795600;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.ecosystem-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 30px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.ecosystem-status-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #d6a300;
+}
+
+@keyframes ecosystem-message-in {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .healthcare-ecosystem {
+        padding: 44px 16px 32px;
+        background-size: auto 100%, cover;
+    }
+
+    .ecosystem-products {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ecosystem-product {
+        padding: 20px 16px;
+    }
+
+    .product-logo-wrap {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 11px;
+    }
+
+    .ecosystem-footer {
+        align-items: flex-start;
+        line-height: 1.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ecosystem-product,
+    .product-message {
+        animation: none;
+        transition: none;
+    }
+}

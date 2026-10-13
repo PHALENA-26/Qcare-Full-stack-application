@@ -1,48 +1,53 @@
-
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      th:fragment="layout(title, content)">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title th:text="${title} ?: 'AI Help Desk Software | Zoho Desk Clone'">AI Help Desk Software - Zoho Desk</title>
 
-    <title>PHALENA | QCARE</title>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
-    <link rel="apple-touch-icon" th:href="@{/images/favicon.png}">
+    <!-- Global & Modular Styles -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/hero.css}" href="../static/css/hero.css">
+    <link rel="stylesheet" th:href="@{/css/healthcare-ecosystem.css}" href="../static/css/healthcare-ecosystem.css">
 
-    <!-- Base CSS -->
-    <link rel="stylesheet" th:href="@{/css/base.css}">
-    <link rel="stylesheet" th:href="@{/css/navbar.css}">
-    <link rel="stylesheet" th:href="@{/css/hero.css}">
-
+    <!-- GSAP & ScrollTrigger for Scroll Physics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
+<body class="antialiased">
 
-<body>
+<!-- Top Utility Bar & Main Navigation Fragment -->
+<div th:replace="~{fragments/navbar :: siteHeader}"></div>
 
-
-<header>
-    <!-- Header -->
-    <div th:replace="~{fragments/navbar :: navbar}"></div>
-</header>
-
-<main>
-
-    <div th:replace="~{fragments/hero :: hero}"></div>
-
-
+<!-- Main Content Container -->
+<main id="main-content">
+    <div th:replace="~{fragments/hero :: heroSection}"></div>
+    <div th:replace="~{fragments/healthcare-ecosystem :: healthcareEcosystem}"></div>
 </main>
 
-<footer>
-    <!-- Footer -->
-</footer>
+<!-- Floating Live Chat Widget (Collapses on small screens) -->
+<aside class="floating-chat-bubble" id="chatWidget" aria-label="Live Support">
+    <button type="button" class="chat-status-pill" id="chatStatusPill" aria-label="Open Live Chat">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div class="chat-text">
+            <strong class="chat-title">We're Online!</strong>
+            <span class="chat-subtitle">How may I help you today?</span>
+        </div>
+        <div class="chat-avatar" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5.228-1.307A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+        </div>
+    </button>
+</aside>
 
-<!-- Base JavaScript -->
-<script th:src="@{/js/base.js}" defer></script>
-
-
+<!-- Scripts -->
+<script th:src="@{/js/hero-interactive.js}" src="../static/js/hero-interactive.js"></script>
+<script th:src="@{/js/healthcare-ecosystem.js}" src="../static/js/healthcare-ecosystem.js"></script>
 </body>
 </html>

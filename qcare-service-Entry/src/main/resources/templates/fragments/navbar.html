@@ -1,47 +1,135 @@
-
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<header th:fragment="navbar" class="site-header">
-    <nav class="navbar container">
+<header th:fragment="siteHeader" class="header-container" role="banner">
+    <!-- Top Utility Ecosystem Bar (Clean Scroll on Tablet, Hidden on Phone) -->
+    <div class="utility-bar">
+        <div class="utility-inner">
+            <nav class="ecosystem-links" aria-label="PHALENA Healthcare Ecosystem">
+                <a href="/" class="brand-blocks" aria-label="PHALENA QCARE Home">
+                    <img
+                            th:src="@{/images/phalena.png}"
+                            src="../static/images/phalena.png"
+                            alt="PHALENA"
+                            class="phalena-mini-logo"
+                    />
+                </a>
+                <a href="#medimate" class="eco-link">MEDIMATE</a>
+                <a href="#mediplus" class="eco-link">MEDIPLUS</a>
+                <a href="#mediq" class="eco-link">MEDIQ</a>
+                <a href="#appointments" class="eco-link">Appointments</a>
+                <a href="#emergency" class="eco-link">Emergency Care</a>
+                <a href="#queues" class="eco-link">Smart Queues</a>
+                <div class="dropdown-wrap eco-link">
+                    <span>Our Ecosystem <svg class="chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span>
+                </div>
+            </nav>
 
-        <!-- PHALENA Brand -->
-        <a th:href="@{/}" class="brand" aria-label="PHALENA Home">
-            <img th:src="@{/images/phalena-logo.png}"
-                 alt="PHALENA"
-                 class="brand-logo">
-        </a>
+            <div class="utility-actions">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
 
-        <!-- Mobile Menu Button -->
-        <button class="menu-toggle"
-                type="button"
-                aria-label="Toggle navigation"
-                aria-controls="navLinks"
-                aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+                <!-- Language Dropdown -->
+                <div class="language-selector" id="langSelector">
+                    <button class="lang-trigger" aria-haspopup="true" aria-expanded="false">
+                        <svg class="globe-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        <span>English (India)</span>
+                        <svg class="chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </button>
+                    <ul class="lang-dropdown-menu" role="menu">
+                        <li><a href="#" role="menuitem">English (India)</a></li>
+                        <li><a href="#" role="menuitem">English (Global)</a></li>
+                        <li><a href="#" role="menuitem">বাংলা (Bengali)</a></li>
+                        <li><a href="#" role="menuitem">हिन्दी (Hindi)</a></li>
+                    </ul>
+                </div>
 
-        <!-- Navigation Links -->
-        <div class="nav-links" id="navLinks">
-            <a th:href="@{/#modules}">Modules</a>
-            <a th:href="@{/#ecosystem}">Ecosystem</a>
-            <a th:href="@{/about}">About</a>
-            <a th:href="@{/#team}">Team</a>
-            <a th:href="@{/#roadmap}">Roadmap</a>
-
-            <!-- Explore QCARE CTA -->
-            <a th:href="@{/modules}" class="nav-cta">
-                <span class="cta-text">Explore QCARE</span>
-                <span class="cta-arrow" aria-hidden="true">↗</span>
-            </a>
+                <a href="#signin" class="signin-link">Sign In</a>
+                <a href="#get-started" class="btn-primary-red">Get Started</a>
+            </div>
         </div>
+    </div>
 
-    </nav>
+    <!-- Main QCARE Header -->
+    <div class="main-nav-bar">
+        <div class="main-nav-inner">
+            <!-- Brand Logo -->
+            <a href="/" class="brand-desk-logo" aria-label="PHALENA QCARE Home">
+                <div class="logo-text">
+                    <span class="brand-sup">PHALENA</span>
+                    <strong class="brand-sub">QCARE</strong>
+                </div>
+            </a>
+
+            <!-- Desktop Menu (Hidden on Mobile) -->
+            <nav class="desk-menu-links" id="deskMenuLinks" aria-label="Main navigation">
+                <div class="nav-item has-dropdown">
+                    <a href="#features">Features</a>
+                    <svg class="chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </div>
+                <div class="nav-item"><a href="#ecosystem">Ecosystem</a></div>
+                <div class="nav-item has-dropdown">
+                    <a href="#modules">Modules</a>
+                    <svg class="chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="#about">About</a>
+                    <svg class="chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="#resources">Resources</a>
+                    <svg class="chevron" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                </div>
+            </nav>
+
+            <!-- Header Actions & Mobile Hamburger -->
+            <div class="header-action-group">
+                <a href="#ask-qcare" class="btn-ask-zia">
+                    <span class="sparkle">✦</span>
+                    <span class="btn-text">Ask QCARE AI</span>
+                </a>
+
+                <!-- Hamburger Button (Only shows on mobile screens) -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Slide-Out Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="#features" class="mob-link">Features</a>
+                <a href="#ecosystem" class="mob-link">Ecosystem</a>
+                <a href="#modules" class="mob-link">Modules</a>
+                <a href="#about" class="mob-link">About</a>
+                <a href="#resources" class="mob-link">Resources</a>
+            </nav>
+
+            <div class="mobile-ecosystem-section">
+                <span class="mob-section-label">PHALENA ECOSYSTEM</span>
+                <div class="mob-eco-grid">
+                    <a href="#medimate" class="mob-eco-pill">MEDIMATE</a>
+                    <a href="#mediplus" class="mob-eco-pill">MEDIPLUS</a>
+                    <a href="#mediq" class="mob-eco-pill">MEDIQ</a>
+                    <a href="#appointments" class="mob-eco-pill">Appointments</a>
+                    <a href="#emergency" class="mob-eco-pill">Emergency Care</a>
+                </div>
+            </div>
+
+            <div class="mobile-drawer-footer">
+                <a href="#signin" class="btn-mob-signin">Sign In</a>
+                <a href="#get-started" class="btn-primary-red mob-btn-cta">Get Started</a>
+            </div>
+        </div>
+    </div>
 </header>
 
 </body>
 </html>
-
